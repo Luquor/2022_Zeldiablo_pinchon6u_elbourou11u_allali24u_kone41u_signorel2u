@@ -63,8 +63,10 @@ public class LabyDessin implements DessinJeu {
                     h=0;
                     break;
                 case'P':
+                    gc.setFill(Color.LIGHTGRAY);
+                    gc.fillOval(h,v,taille,taille);
                     gc.setFill(Color.RED);
-                    gc.fillOval(h+taille/2,v+taille/2,taille/2,taille/2);
+                    gc.fillOval(h,v,taille,taille);
                     h=h+taille;
                     break;
             }
