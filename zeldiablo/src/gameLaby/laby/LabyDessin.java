@@ -49,7 +49,7 @@ public class LabyDessin implements DessinJeu {
             char c = res.charAt(i);
             switch (c){
                 case'X':
-                    gc.setFill(Color.BROWN);
+                    gc.setFill(Color.BLACK);
                     gc.fillRect(h,v,taille,taille);
                     h=h+taille;
                     break;
@@ -63,13 +63,8 @@ public class LabyDessin implements DessinJeu {
                     h=0;
                     break;
                 case'P':
-                    gc.setFill(Color.BLUE);
-                    gc.fillRect(h,v,taille,taille);
-                    h=h+taille;
-                    break;
-                case'S':
-                    gc.setFill(Color.YELLOW);
-                    gc.fillRect(h,v,taille,taille);
+                    gc.setFill(Color.RED);
+                    gc.fillOval(h+taille/2,v+taille/2,taille/2,taille/2);
                     h=h+taille;
                     break;
             }
