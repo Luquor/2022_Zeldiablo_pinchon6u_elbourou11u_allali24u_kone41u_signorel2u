@@ -13,7 +13,7 @@ public class LabyJeu implements Jeu {
 
 
     public LabyJeu() throws IOException {
-        this.laby = new Labyrinthe("laby1.txt");
+        this.laby = new Labyrinthe("labySimple/laby1.txt");
         this.pj = new Perso(laby.pj.x, laby.pj.y);
     }
 
