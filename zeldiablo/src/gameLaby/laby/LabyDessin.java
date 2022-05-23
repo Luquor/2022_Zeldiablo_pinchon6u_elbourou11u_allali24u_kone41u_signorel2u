@@ -10,65 +10,47 @@ import static gameLaby.laby.Labyrinthe.*;
 
 public class LabyDessin implements DessinJeu {
 
-    private LabyJeu labyjeu;
-    private Labyrinthe LABY;
+    private LabyJeu lab;
 
     char getChar(int x, int y) {
         char res=VIDE;
-        if ((x == labyjeu.getPj().getX()) && (y == labyjeu.getPj().getY())) res=PJ;
-        if (LABY.getMur(x,y)) res=MUR;
+        if ((x == lab.getPerso().getX()) && (y == lab.getPerso().getY())) res=PJ;
+        if (lab.getLaby().getMur(x,y)) res=MUR;
         return res;
     }
 
     @Override
     public void dessinerJeu(Jeu jeu, Canvas canvas) {
-
-        labyjeu = (LabyJeu) jeu;
-
-        //recuperer un pinceau pour dessiner
+        //recuperation des donnees
+        lab = (LabyJeu) jeu;
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
-        //recuperation des données
-        LABY = labyjeu.getLaby();
-        boolean[][] murs = LABY.murs;
+        //preparation des donnees
+        int taille=30;
 
-        //creation d un toString du labyrinthe
-        String res="";
-        for(int i=0;i<murs.length;i++){
-            for(int j=0;j<murs[i].length;j++){
-                res+=getChar(i,j);
-            }
-            res+="\n";
-        }
+        //effacer l ancien
+        gc.clearRect(0,0,lab.getLaby().getLength()*taille,lab.getLaby().getLengthY()*taille);
 
-        //dessin selon le string precedent
-        int h=0,v=0;
-        int i = 0;
-        int taille = 30;
-        while(i<res.length()){
-            char c = res.charAt(i);
-            switch (c){
-                case'X':
-                    gc.setFill(Color.BLACK);
-                    gc.fillRect(h,v,taille,taille);
-                    h=h+taille;
-                    break;
-                case'.':
-                    gc.setFill(Color.WHITE);
-                    gc.fillRect(h,v,taille,taille);
-                    h=h+taille;
-                    break;
-                case'\n':
-                    v=v+taille;
-                    h=0;
-                    break;
-                case'P':
-                    gc.setFill(Color.RED);
-                    gc.fillOval(h,v,taille,taille);
-                    h=h+taille;
-                    break;
+        //dessin
+        for (int i=0;i<lab.getLaby().murs.length;i++){ //colonnes
+            for (int j=0;j<lab.getLaby().murs[i].length;j++){ //lignes
+                switch (getChar(i,j)){
+                    case PJ:
+                        gc.setFill(Color.WHITE);
+                        gc.fillRect(i*taille,j*taille,taille,taille);
+                        gc.setFill(Color.RED);
+                        gc.fillOval(i*taille,j*taille,taille,taille);
+                        break;
+                    case VIDE:
+                        gc.setFill(Color.WHITE);
+                        gc.fillRect(i*taille,j*taille,taille,taille);
+                        break;
+                    case MUR:
+                        gc.setFill(Color.BLACK);
+                        gc.fillRect(i*taille,j*taille,taille,taille);
+                        break;
+                }
             }
-            i++;
         }
     }
 }

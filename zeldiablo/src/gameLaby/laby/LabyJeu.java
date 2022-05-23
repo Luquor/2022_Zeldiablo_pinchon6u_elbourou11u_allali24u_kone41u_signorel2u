@@ -8,13 +8,13 @@ import java.io.IOException;
 public class LabyJeu implements Jeu {
 
 
-    private final Labyrinthe laby;
-    private final Perso pj;
+    private Labyrinthe laby;
+    private Perso perso;
 
 
     public LabyJeu() throws IOException {
         this.laby = new Labyrinthe("labySimple/laby1.txt");
-        this.pj = new Perso(laby.pj.x, laby.pj.y);
+        this.perso = new Perso(laby.pj.x, laby.pj.y);
     }
 
 
@@ -33,6 +33,8 @@ public class LabyJeu implements Jeu {
             this.laby.deplacerPerso(Labyrinthe.BAS);
 
         }
+        //mettre a jour le personnage de this
+        this.perso=this.laby.pj;
     }
 
     @Override
@@ -49,7 +51,7 @@ public class LabyJeu implements Jeu {
         return laby;
     }
 
-    public Perso getPj() {
-        return pj;
+    public Perso getPerso() {
+        return perso;
     }
 }
