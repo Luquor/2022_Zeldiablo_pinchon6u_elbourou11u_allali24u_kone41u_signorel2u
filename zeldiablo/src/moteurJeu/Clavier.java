@@ -3,10 +3,6 @@ package moteurJeu;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileReader;
-
 public class Clavier {
     /**
     * touches du clavier
@@ -82,7 +78,22 @@ public class Clavier {
         }
     }
 
-    /**
+    public KeyCode getToucheHaut() {
+        return toucheHaut;
+    }
+
+    public KeyCode getToucheBas() {
+        return toucheBas;
+    }
+
+    public KeyCode getToucheGauche() {
+        return toucheGauche;
+    }
+
+    public KeyCode getToucheDroite() {
+        return toucheDroite;
+    }
+/**
      * configure les touches qui controlent le personnage
      */
     /*public void configurerTouches(){
