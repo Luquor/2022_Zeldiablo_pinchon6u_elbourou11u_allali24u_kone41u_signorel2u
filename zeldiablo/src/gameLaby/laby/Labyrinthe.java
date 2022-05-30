@@ -138,7 +138,7 @@ public class Labyrinthe {
      *
      * @param action une des actions possibles
      */
-    public void deplacerPerso(String action) {
+    public void deplacerPerso(String action) {  
         // case courante
         int[] courante = {this.pj.x, this.pj.y};
 

@@ -1,0 +1,6 @@
+1- Case piégées
+Lorsqu'une entité arrive sur une case piégée, elle subit des dégâts.
+
+- Les dégâts ne se déclenchent que lorsque le joueur arrive sur la case, il peut ensuite rester sur celle si aussi longtemps qu'il le souhaite sans prendre de dégât.
+- Lorsque la case devient à nouveau vide, le piège se réamorce
+
