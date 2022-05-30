@@ -5,4 +5,13 @@ Lorsqu'une entité arrive sur une case piégée, elle subit des dégâts.
 - Lorsque la case devient à nouveau vide, le piège se réamorce
 
 2 - Configuration Clavier :
+Nous reconfigurons dans un fichier texte les touches du jeu pour pouvoir contrôler le personnage avec ses propres touches personnalisable.
+    - Les touches sont décrites dans un fichier nommé "configTouches.txt"
+    - Si le fichier n'existe pas ou qu'il est vide les touches seront mise par défaut ("Z,Q,S,D")
+    - le fichier est chargé dans le constructeur du clavier donc au début du lancement de l'application.
 
+    Le fichier configTouches.txt doit obligatoirement être écrit de cette façon :
+    // première ligne du fichier : votre touche du HAUT.
+    // deuxième ligne du fichier : votre touche du BAS.
+    // troisième ligne du fichier : votre touche du GAUCHE.
+    // quatrième ligne du fichier : votre touche de la DROITE.
