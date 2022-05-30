@@ -7,7 +7,7 @@ import java.io.*;
 
 public class Clavier {
     /**
-    * touches du clavier
+     * touches du clavier
      */
     private KeyCode toucheHaut, toucheBas, toucheGauche, toucheDroite;
 
@@ -22,7 +22,7 @@ public class Clavier {
      * Constructeur
      */
     public Clavier(String nomFichier) {
-       this.configurerTouches(nomFichier);
+        this.configurerTouches(nomFichier);
     }
 
 
@@ -119,7 +119,7 @@ public class Clavier {
             this.toucheBas = KeyCode.S;
             this.toucheGauche = KeyCode.Q;
             this.toucheDroite = KeyCode.D;
-            }
+        }
     }
 
 }
