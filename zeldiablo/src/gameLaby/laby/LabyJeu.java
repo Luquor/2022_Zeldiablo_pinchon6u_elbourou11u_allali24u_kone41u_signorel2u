@@ -17,6 +17,13 @@ public class LabyJeu implements Jeu {
         this.perso = new Perso(laby.pj.x, laby.pj.y);
     }
 
+    public int getTailleHeight(){
+        return laby.murs[0].length;
+    }
+    public int getTailleWidth(){
+        return laby.murs.length;
+    }
+
 
     @Override
     public void update(double secondes, Clavier clavier) {

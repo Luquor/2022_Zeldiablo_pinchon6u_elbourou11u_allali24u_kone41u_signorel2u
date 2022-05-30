@@ -16,7 +16,7 @@ public class MainLaby
         LabyJeu lj = new LabyJeu();
 
         //set du moteur jeu :
-        MoteurJeu.setTaille(width,height);
+        MoteurJeu.setTaille(lj.getTailleWidth()*LabyDessin.taille,lj.getTailleHeight()*LabyDessin.taille);
         MoteurJeu.setFPS(fps);
 
         //lancement du jeu:

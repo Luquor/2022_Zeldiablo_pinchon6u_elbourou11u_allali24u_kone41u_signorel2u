@@ -11,6 +11,7 @@ import static gameLaby.laby.Labyrinthe.*;
 public class LabyDessin implements DessinJeu {
 
     private LabyJeu lab;
+    public static int taille=30;
 
     char getChar(int x, int y) {
         char res=VIDE;
@@ -24,9 +25,6 @@ public class LabyDessin implements DessinJeu {
         //recuperation des donnees
         lab = (LabyJeu) jeu;
         GraphicsContext gc = canvas.getGraphicsContext2D();
-
-        //preparation des donnees
-        int taille=30;
 
         //effacer l ancien
         gc.clearRect(0,0,lab.getLaby().getLength()*taille,lab.getLaby().getLengthY()*taille);
