@@ -15,6 +15,9 @@ public class CasePieges extends Position {
         this.etatCasePieges = false;
     }
 
+    public void setEtatCasePieges(boolean etatCasePieges) {
+        this.etatCasePieges = etatCasePieges;
+    }
 
     /**
      * Permet de recuperer l'etat de la case pieges

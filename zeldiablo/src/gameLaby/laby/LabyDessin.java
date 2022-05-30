@@ -34,7 +34,17 @@ public class LabyDessin implements DessinJeu {
             for (int j=0;j<lab.getLaby().murs[i].length;j++){ //lignes
                 switch (getChar(i,j)){
                     case PJ:
-                        gc.setFill(Color.WHITE);
+                        boolean b=false;
+                        Color color;
+                        for (int k = 0; k < this.lab.getLaby().CasePieges.size(); k++) {
+                            b = b || this.lab.getLaby().CasePieges.get(k).estDecouverte() ;
+                        }
+                        if (b) {
+                            color = Color.PURPLE;
+                            System.out.println("c'est un piege !!");
+                        } else
+                            color=Color.WHITE;
+                        gc.setFill(color);
                         gc.fillRect(i*taille,j*taille,taille,taille);
                         gc.setFill(Color.RED);
                         gc.fillOval(i*taille,j*taille,taille,taille);
