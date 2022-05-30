@@ -1,6 +1,8 @@
 package gameLaby.laby;
 
+import javafx.animation.PauseTransition;
 import javafx.application.Platform;
+import javafx.util.Duration;
 import moteurJeu.Clavier;
 import moteurJeu.Jeu;
 
@@ -48,6 +50,7 @@ public class LabyJeu implements Jeu {
         for (int i=0; i<this.laby.CasePieges.size();i++) {
             if (this.laby.CasePieges.get(i).getX() == p.getX() && this.laby.CasePieges.get(i).getY() == p.getY()) {
                 if (pAncien.getY() != p.getY() && pAncien.getX() != p.getX()) {
+                    System.out.println("c'est un piege !!");
                     this.laby.pj.subirDegats(1);
                     System.out.println("PV : "+this.laby.pj.getPv());
                     pAncien = p;
@@ -58,8 +61,9 @@ public class LabyJeu implements Jeu {
             }
         }
         if (this.laby.pj.getPv()<=0) {
-            Platform.exit();
-            System.out.println("Fin, le bonhomme est mort ! ");
+            PauseTransition pause = new PauseTransition(Duration.seconds(3));
+            pause.play();
+            pause.setOnFinished(e -> {System.out.println("Fin, le bonhomme est mort ! ");Platform.exit();});
         }
         this.perso=this.laby.pj;
 
