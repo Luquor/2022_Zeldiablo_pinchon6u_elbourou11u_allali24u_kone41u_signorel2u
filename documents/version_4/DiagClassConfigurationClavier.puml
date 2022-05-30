@@ -19,7 +19,7 @@ class moteurJeu.Clavier<<Nouveau>>
 
     + appuyerTouche(KeyEvent event)
     + relacherTouche(KeyEvent event)
-    + configurerTouche()
+    + configurerTouches()
 }
 
 class moteurJeu.FrameStats {

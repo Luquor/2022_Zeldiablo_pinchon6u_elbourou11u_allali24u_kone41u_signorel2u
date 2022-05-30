@@ -5,3 +5,4 @@ Lorsqu'une entité arrive sur une case piégée, elle subit des dégâts.
 - Lorsque la case devient à nouveau vide, le piège se réamorce
 
 2 - Configuration Clavier :
+
