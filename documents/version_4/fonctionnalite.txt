@@ -1,4 +1,4 @@
-1- Case piégées
+1- Case piégées :
 Lorsqu'une entité arrive sur une case piégée, elle subit des dégâts.
 
 - Les dégâts ne se déclenchent que lorsque le joueur arrive sur la case, il peut ensuite rester sur celle si aussi longtemps qu'il le souhaite sans prendre de dégât.
@@ -15,3 +15,5 @@ Nous reconfigurons dans un fichier texte les touches du jeu pour pouvoir contrô
     // deuxième ligne du fichier : votre touche du BAS.
     // troisième ligne du fichier : votre touche du GAUCHE.
     // quatrième ligne du fichier : votre touche de la DROITE.
+
+3- Affichage  des sprites :

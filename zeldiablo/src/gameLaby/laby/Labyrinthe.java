@@ -3,6 +3,8 @@ package gameLaby.laby;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * classe labyrinthe. represente un labyrinthe avec
@@ -35,6 +37,11 @@ public class Labyrinthe {
      * les murs du labyrinthe
      */
     public boolean[][] murs;
+
+    /*
+     * liste des cases pieges du labyrinthe
+     */
+    public List<CasePieges> CasePieges = new ArrayList<CasePieges>();
 
     /**
      * retourne la case suivante selon une actions
@@ -108,6 +115,8 @@ public class Labyrinthe {
                         this.murs[colonne][numeroLigne] = true;
                         break;
                     case VIDE:
+                        if (Math.random()>0.9)
+                            this.CasePieges.add(new CasePieges(colonne,numeroLigne));
                         this.murs[colonne][numeroLigne] = false;
                         break;
                     case PJ:
