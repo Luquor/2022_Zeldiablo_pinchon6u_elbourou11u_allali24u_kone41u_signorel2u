@@ -10,6 +10,7 @@ public class Perso {
      * position du personnage
      */
     int x, y;
+    private int pv;
 
     /**
      * constructeur
@@ -20,6 +21,7 @@ public class Perso {
     public Perso(int dx, int dy) {
         this.x = dx;
         this.y = dy;
+        this.pv = 5;
     }
 
     /**
@@ -32,6 +34,14 @@ public class Perso {
     public boolean etrePresent(int dx, int dy) {
 
         return (this.x == dx && this.y == dy);
+    }
+
+    /**
+     * Permet de faire subir des dégâts au personnage
+     * @param degats
+     */
+    public void subirDegats(int degats) {
+        this.pv -= degats;
     }
 
     // ############################################
@@ -52,5 +62,12 @@ public class Perso {
     public int getY() {
         //getter
         return this.y;
+    }
+
+    /**
+     * @return pv du personnage
+     */
+    public int getPv() {
+        return this.pv;
     }
 }

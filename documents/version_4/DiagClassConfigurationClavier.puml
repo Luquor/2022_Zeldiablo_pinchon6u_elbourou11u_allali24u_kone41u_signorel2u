@@ -1,0 +1,108 @@
+@startuml
+
+skinparam class{
+  BackgroundColor<<Nouveau>> Orange
+  BorderColor<<Nouveau>> Black
+}
+
+class moteurJeu.Clavier<<Nouveau>>
+{
+    + haut  : boolean
+    + bas : boolean
+    + gauche : boolean
+    + droit : boolean
+
+    - toucheHaut : KeyCode
+    - toucheBas : KeyCode
+    - toucheGauche : KeyCode
+    - toucheDroite : KeyCode
+
+    + appuyerTouche(KeyEvent event)
+    + relacherTouche(KeyEvent event)
+    + configurerTouches()
+}
+
+class moteurJeu.FrameStats {
+- long frameCount
+- double meanFrameInterval
+- ReadOnlyStringWrapper text
++ long getFrameCount()
++ double getMeanFrameInterval()
++ void addFrame(long)
++ String getText()
++ ReadOnlyStringProperty textProperty()
++ String toString()
+}
+class gameLaby.laby.Labyrinthe {
++ {static} char MUR
++ {static} char PJ
++ {static} char VIDE
++ {static} String HAUT
++ {static} String BAS
++ {static} String GAUCHE
++ {static} String DROITE
++ Perso pj
++ boolean[][] murs
++ <<Create>> Labyrinthe(String)
+~ {static} int[] getSuivant(int,int,String)
++ void deplacerPerso(String)
++ boolean etreFini()
++ int getLengthY()
++ int getLength()
++ boolean getMur(int,int)
+}
+interface moteurJeu.DessinJeu {
+~ void dessinerJeu(Jeu,Canvas)
+}
+class gameLaby.laby.LabyDessin {
+~ char getChar(int,int)
++ void dessinerJeu(Jeu,Canvas)
+}
+
+class gameLaby.laby.LabyJeu {
++ <<Create>> LabyJeu()
++ void update(double,Clavier)
++ void init()
++ boolean etreFini()
++ Labyrinthe getLaby()
++ Perso getPerso()
+}
+interface moteurJeu.Jeu {
+~ void update(double,Clavier)
+~ void init()
+~ boolean etreFini()
+}
+
+class gameLaby.laby.Perso {
+~ int x
++ <<Create>> Perso(int,int)
++ boolean etrePresent(int,int)
++ int getX()
++ int getY()
+}
+
+class moteurJeu.MoteurJeu {
+- {static} double FPS
+- {static} double dureeFPS
+- {static} double WIDTH
+- {static} double HEIGHT
++ {static} void launch(Jeu,DessinJeu)
++ {static} void setFPS(int)
++ {static} void setTaille(double,double)
++ void start(Stage)
+- void startAnimation(Canvas)
+}
+
+
+moteurJeu.DessinJeu <|.. gameLaby.laby.LabyDessin
+moteurJeu.Jeu <|.. gameLaby.laby.LabyJeu
+javafx.application.Application <|-- moteurJeu.MoteurJeu
+moteurJeu.MoteurJeu "1" --> "1" moteurJeu.Clavier : - controle
+moteurJeu.MoteurJeu "1" --> "1" moteurJeu.Jeu : - <static> jeu
+moteurJeu.MoteurJeu "1" --> "1" moteurJeu.DessinJeu : - <static> dessin
+moteurJeu.MoteurJeu "1" --> "1" moteurJeu.FrameStats : - <final> frameStats
+gameLaby.laby.LabyJeu "0..*" --> "1" gameLaby.laby.Labyrinthe : - laby
+gameLaby.laby.LabyJeu "1" --> "1" gameLaby.laby.Perso : - perso
+gameLaby.laby.LabyDessin "1" --> "1" gameLaby.laby.LabyJeu : - lab
+
+@enduml

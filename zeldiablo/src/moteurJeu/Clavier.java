@@ -8,7 +8,6 @@ public class Clavier {
      * controle appuyes
      */
     public boolean haut, bas, gauche, droite;
-
     /**
      * stocke les commandes
      *
