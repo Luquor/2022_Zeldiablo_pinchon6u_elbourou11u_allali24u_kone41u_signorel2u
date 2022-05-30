@@ -17,6 +17,7 @@ public class LabyJeu implements Jeu {
     public LabyJeu() throws IOException {
         this.laby = new Labyrinthe("labySimple/laby2.txt");
         this.perso = new Perso(laby.pj.x, laby.pj.y);
+        System.out.println("PV : "+this.laby.pj.getPv());
     }
 
     public int getTailleHeight(){
@@ -48,6 +49,7 @@ public class LabyJeu implements Jeu {
             if (this.laby.CasePieges.get(i).getX() == p.getX() && this.laby.CasePieges.get(i).getY() == p.getY()) {
                 if (pAncien.getY() != p.getY() && pAncien.getX() != p.getX()) {
                     this.laby.pj.subirDegats(1);
+                    System.out.println("PV : "+this.laby.pj.getPv());
                     pAncien = p;
                 }
                 this.laby.CasePieges.get(i).setEtatCasePieges(true);
@@ -55,7 +57,6 @@ public class LabyJeu implements Jeu {
                 this.laby.CasePieges.get(i).setEtatCasePieges(false);
             }
         }
-        System.out.println("PV : "+this.laby.pj.getPv());
         if (this.laby.pj.getPv()<=0) {
             Platform.exit();
             System.out.println("Fin, le bonhomme est mort ! ");
