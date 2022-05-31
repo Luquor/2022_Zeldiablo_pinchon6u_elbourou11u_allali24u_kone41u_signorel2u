@@ -12,7 +12,6 @@ public class Clavier {
     private KeyCode toucheHaut, toucheBas, toucheGauche, toucheDroite;
 
 
-
     /**
      * controle appuyes
      */
@@ -122,4 +121,21 @@ public class Clavier {
         }
     }
 
+
+    public KeyCode getToucheHaut() {
+        return this.toucheHaut;
+    }
+
+    public KeyCode getToucheBas() {
+        return this.toucheBas;
+    }
+
+    public KeyCode getToucheGauche() {
+        return this.toucheGauche;
+    }
+
+    public KeyCode getToucheDroite()
+    {
+        return this.toucheDroite;
+    }
 }
