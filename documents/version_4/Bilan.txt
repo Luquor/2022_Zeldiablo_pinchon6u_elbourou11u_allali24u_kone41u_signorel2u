@@ -1,0 +1,4 @@
+Pour cette quatrième itération, nous avons choisi 3 fonctionnalités : l'ajout d'une case piégée, la configuration du clavier et l'ajout de sprite.
+
+Pour l'instant les sprites fonctionnent mais ne sont pas terminés. Nous voulons pouvoir changer le sprite du personnage en fonction de sa direction (voir son dos quand il va vers le haut, son côté gauche quand il va vers la gauche etc).
+La configur.ation du clavier se fait via un fichier txt, mais nous voulons essayer de faire un menu dans le jeu
