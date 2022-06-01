@@ -1,6 +1,11 @@
 package gameLaby.laby;
 
 
+import javafx.scene.image.Image;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * gere un personnage situe en x,y
  */
@@ -11,6 +16,8 @@ public class Perso {
      */
     int x, y;
     private int pv;
+    private List<Image> ImgPerso = new ArrayList<>();
+    private Image affichage;
 
     /**
      * constructeur
@@ -70,4 +77,35 @@ public class Perso {
     public int getPv() {
         return this.pv;
     }
+
+    public Image getAffichage() {
+        return affichage;
+    }
+
+    public void changerDirection(String direction) {
+        switch (direction){
+            case Labyrinthe.HAUT:
+                this.affichage = ImgPerso.get(0);
+                break;
+            case Labyrinthe.DROITE:
+                this.affichage = ImgPerso.get(1);
+                break;
+            case Labyrinthe.BAS:
+                this.affichage = ImgPerso.get(2);
+                break;
+            case Labyrinthe.GAUCHE:
+                this.affichage = ImgPerso.get(3);
+        }
+    }
+
+    //recuperation d'images
+    public void creerComposantGraphiques(){
+        this.ImgPerso.add(new Image("/gameLaby/ressources/images/perso/Haut.png"));
+        this.ImgPerso.add(new Image("/gameLaby/ressources/images/perso/Droite.png"));
+        this.ImgPerso.add(new Image("/gameLaby/ressources/images/perso/Bas.png"));
+        this.ImgPerso.add(new Image("/gameLaby/ressources/images/perso/Gauche.png"));
+        this.affichage=this.ImgPerso.get(2);
+    }
+
+
 }

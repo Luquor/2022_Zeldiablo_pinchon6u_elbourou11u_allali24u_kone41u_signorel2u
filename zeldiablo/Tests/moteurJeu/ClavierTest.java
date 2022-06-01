@@ -13,13 +13,13 @@ class ClavierTest {
     @Test
     public void test_configurerTouchesOK(){
         //preparation des donnees et test de la methode
-        Clavier clavier = new Clavier("../config/configTouches.txt");
+        Clavier clavier = new Clavier("zeldiablo/config/configTouches.txt");
 
         //assertions
-        assertEquals(KeyCode.getKeyCode("h"), clavier.getToucheHaut(), "La touche h doit etre la touche du haut");
-        assertEquals(KeyCode.getKeyCode("b"), clavier.getToucheBas(), "La touche b doit etre la touche du bas");
-        assertEquals(KeyCode.getKeyCode("g"), clavier.getToucheGauche(), "La touche g doit etre la touche de gauche");
-        assertEquals(KeyCode.getKeyCode("d"), clavier.getToucheDroite(), "La touche d doit etre la touche de droite");
+        assertEquals(KeyCode.H, clavier.getToucheHaut(), "La touche h doit etre la touche du haut");
+        assertEquals(KeyCode.B, clavier.getToucheBas(), "La touche b doit etre la touche du bas");
+        assertEquals(KeyCode.G, clavier.getToucheGauche(), "La touche g doit etre la touche de gauche");
+        assertEquals(KeyCode.D, clavier.getToucheDroite(), "La touche d doit etre la touche de droite");
     }
     /**
      * Test de la methode configurerTouches quand le fichier de configuration
@@ -28,13 +28,13 @@ class ClavierTest {
     @Test
     public void test_configurerTouches_fichierInexistant(){
         //preparation des donnees et test de la methode
-        Clavier clavier = new Clavier("C:\\Users\\Gon\\2022_Zeldiablo_pinchon6u_elbourou11u_allali24u_kone41u_signorel2u\\zeldiablo\\config");
+        Clavier clavier = new Clavier("jeNexistePas");
 
         //assertions
-        assertEquals(KeyCode.getKeyCode("z"), clavier.getToucheHaut(), "La touche z doit etre la touche du haut");
-        assertEquals(KeyCode.getKeyCode("s"), clavier.getToucheBas(), "La touche s doit etre la touche du bas");
-        assertEquals(KeyCode.getKeyCode("q"), clavier.getToucheGauche(), "La touche q doit etre la touche de gauche");
-        assertEquals(KeyCode.getKeyCode("d"), clavier.getToucheDroite(), "La touche d doit etre la touche de droite");
+        assertEquals(KeyCode.Z, clavier.getToucheHaut(), "La touche Z doit etre la touche du haut");
+        assertEquals(KeyCode.S, clavier.getToucheBas(), "La touche S doit etre la touche du bas");
+        assertEquals(KeyCode.Q, clavier.getToucheGauche(), "La touche Q doit etre la touche de gauche");
+        assertEquals(KeyCode.D, clavier.getToucheDroite(), "La touche D doit etre la touche de droite");
     }
     /**
      * Test de la methode configurerTouches quand le fichier de configuration
@@ -43,13 +43,28 @@ class ClavierTest {
     @Test
     public void test_configurerTouches_fichierIncorrect(){
         //preparation des donnees et test de la methode
-        Clavier clavier = new Clavier("C:\\Users\\Gon\\2022_Zeldiablo_pinchon6u_elbourou11u_allali24u_kone41u_signorel2u\\zeldiablo\\config");
+        Clavier clavier = new Clavier("zeldiablo/config/configIncorrect.txt");
 
         //assertions
-        assertEquals(KeyCode.getKeyCode("z"), clavier.getToucheHaut(), "La touche z doit etre la touche du haut");
-        assertEquals(KeyCode.getKeyCode("s"), clavier.getToucheBas(), "La touche s doit etre la touche du bas");
-        assertEquals(KeyCode.getKeyCode("q"), clavier.getToucheGauche(), "La touche q doit etre la touche de gauche");
-        assertEquals(KeyCode.getKeyCode("d"), clavier.getToucheDroite(), "La touche d doit etre la touche de droite");
+        assertEquals(KeyCode.Z, clavier.getToucheHaut(), "La touche z doit etre la touche du haut");
+        assertEquals(KeyCode.S, clavier.getToucheBas(), "La touche s doit etre la touche du bas");
+        assertEquals(KeyCode.Q, clavier.getToucheGauche(), "La touche q doit etre la touche de gauche");
+        assertEquals(KeyCode.D, clavier.getToucheDroite(), "La touche d doit etre la touche de droite");
+    }
+
+    /**
+     * Test de la methode configurerTouches quand le fichier de configuration est incomplet
+     */
+    @Test
+    public void test_configurerTouches_fichierIncomplet(){
+        //preparation des donnees et test de la methode
+        Clavier clavier = new Clavier("zeldiablo/config/configIncomplete.txt");
+
+        //assertions
+        assertEquals(KeyCode.Z, clavier.getToucheHaut(), "La touche z doit etre la touche du haut");
+        assertEquals(KeyCode.S, clavier.getToucheBas(), "La touche s doit etre la touche du bas");
+        assertEquals(KeyCode.Q, clavier.getToucheGauche(), "La touche q doit etre la touche de gauche");
+        assertEquals(KeyCode.D, clavier.getToucheDroite(), "La touche d doit etre la touche de droite");
     }
 
 

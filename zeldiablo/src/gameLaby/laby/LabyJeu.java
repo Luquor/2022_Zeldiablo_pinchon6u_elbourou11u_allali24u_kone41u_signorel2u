@@ -23,7 +23,7 @@ public class LabyJeu implements Jeu {
     }
 
     public int getTailleHeight(){
-        return laby.murs[0].length;
+        return laby.murs[0].length+1;
     }
     public int getTailleWidth(){
         return laby.murs.length;
@@ -35,15 +35,19 @@ public class LabyJeu implements Jeu {
         if (clavier.droite) {
             this.laby.deplacerPerso(Labyrinthe.DROITE);
             pAncien=new Position(0,0);
+            this.laby.pj.changerDirection(Labyrinthe.DROITE);
         } else if (clavier.gauche) {
             this.laby.deplacerPerso(Labyrinthe.GAUCHE);
             pAncien=new Position(0,0);
+            this.laby.pj.changerDirection(Labyrinthe.GAUCHE);
         } else if (clavier.haut) {
             this.laby.deplacerPerso(Labyrinthe.HAUT);
             pAncien=new Position(0,0);
+            this.laby.pj.changerDirection(Labyrinthe.HAUT);
         } else if (clavier.bas) {
             this.laby.deplacerPerso(Labyrinthe.BAS);
             pAncien=new Position(0,0);
+            this.laby.pj.changerDirection(Labyrinthe.BAS);
         }
         //mettre a jour le personnage de this
         Position p = new Position(this.laby.pj.getX(),this.laby.pj.getY());
@@ -60,13 +64,19 @@ public class LabyJeu implements Jeu {
                 this.laby.CasePieges.get(i).setEtatCasePieges(false);
             }
         }
-        if (this.laby.pj.getPv()<=0) {
-            PauseTransition pause = new PauseTransition(Duration.seconds(3));
-            pause.play();
-            pause.setOnFinished(e -> {System.out.println("Fin, le bonhomme est mort ! ");Platform.exit();});
-        }
         this.perso=this.laby.pj;
+        if (this.laby.pj.getPv()<=0) {
+            PauseTransition pause = new PauseTransition(Duration.millis(100));
+            pause.play();
+            pause.setOnFinished(event -> {
+                try {
+                    System.out.println("Fin, le bonhomme est mort ! ");
+                    Thread.sleep(3000);
+                    Platform.exit();
+                } catch (InterruptedException e) {}
+            });
 
+        }
     }
 
     @Override
