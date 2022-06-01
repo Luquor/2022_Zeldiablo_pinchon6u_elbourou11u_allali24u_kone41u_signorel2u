@@ -20,13 +20,9 @@ public class LabyDessin implements DessinJeu {
 
     private LabyJeu lab;
     public static int taille=30;
-
-<<<<<<< HEAD
+    
     //Création d'une liste d'image
     private ArrayList<Image> lImages; // murs,floor,hero,trap
-=======
-    private ArrayList<Image> lImages; // murs,floor,trap
->>>>>>> 4187d9b (finalisation des Sprites)
     private int lancement;
 
     public LabyDessin() {
