@@ -21,6 +21,7 @@ public class LabyDessin implements DessinJeu {
     private LabyJeu lab;
     public static int taille=30;
 
+    //Création d'une liste d'image
     private ArrayList<Image> lImages; // murs,floor,hero,trap
     private int lancement;
 
