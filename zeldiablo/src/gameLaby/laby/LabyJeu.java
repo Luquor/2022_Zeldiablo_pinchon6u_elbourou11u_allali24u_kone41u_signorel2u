@@ -17,7 +17,7 @@ public class LabyJeu implements Jeu {
 
 
     public LabyJeu() throws IOException {
-        this.laby = new Labyrinthe("labySimple/laby2.txt");
+        this.laby = new Labyrinthe("labySimple/labyPassageSecret.txt");
         this.perso = new Perso(laby.pj.x, laby.pj.y);
         System.out.println("PV : "+this.laby.pj.getPv());
     }
@@ -62,6 +62,12 @@ public class LabyJeu implements Jeu {
                 this.laby.CasePieges.get(i).setEtatCasePieges(true);
             } else {
                 this.laby.CasePieges.get(i).setEtatCasePieges(false);
+            }
+        }
+        if (this.laby.getActivation()!=null) {
+            if (this.laby.pj.etrePresent(this.laby.getActivation().getX(), this.laby.getActivation().getY())) {
+                this.laby.getActivation().activer();
+                this.laby.murs[this.laby.getActivation().getPassageX()][this.laby.getActivation().getPassageY()] = false;
             }
         }
         this.perso=this.laby.pj;

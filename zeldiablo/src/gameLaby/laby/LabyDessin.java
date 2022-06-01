@@ -22,7 +22,7 @@ public class LabyDessin implements DessinJeu {
     public static int taille=30;
     
     //Création d'une liste d'image
-    private ArrayList<Image> lImages; // murs,floor,hero,trap
+    private ArrayList<Image> lImages; // murs,floor,trap,button,buttonPressed,doorClosed,doorOpen
     private int lancement;
 
     public LabyDessin() {
@@ -32,7 +32,9 @@ public class LabyDessin implements DessinJeu {
     char getChar(int x, int y) {
         char res=VIDE;
         if ((x == lab.getPerso().getX()) && (y == lab.getPerso().getY())) res=PJ;
-        if (lab.getLaby().getMur(x,y)) res=MUR;
+        else if (x==this.lab.getLaby().getActivation().getX() && y==this.lab.getLaby().getActivation().getY()) res =ACTIVATION;
+        else if (x==this.lab.getLaby().getActivation().getPassageX() && y==this.lab.getLaby().getActivation().getPassageY()) res=PASSAGE_SECRET;
+        else if (lab.getLaby().getMur(x,y)) res=MUR;
         return res;
     }
 
@@ -50,6 +52,11 @@ public class LabyDessin implements DessinJeu {
             lImages.add(new Image("/gameLaby/ressources/images/floor.png"));
             lImages.add(new Image("/gameLaby/ressources/images/trap.png"));
             lImages.add(new Image("/gameLaby/ressources/images/hearth.png"));
+            lImages.add(new Image("/gameLaby/ressources/images/button.png"));
+            lImages.add(new Image("/gameLaby/ressources/images/buttonPressed.png"));
+            lImages.add(new Image("/gameLaby/ressources/images/doorClosed.png"));
+            lImages.add(new Image("/gameLaby/ressources/images/doorOpen.png"));
+
             this.lab.getPerso().creerComposantGraphiques();
             lancement++;
         }
@@ -73,6 +80,20 @@ public class LabyDessin implements DessinJeu {
                         break;
                     case VIDE:
                         gc.drawImage(lImages.get(1),i*taille,j*taille,taille,taille);
+                        break;
+                    case PASSAGE_SECRET:
+                        int k;
+                        if (this.lab.getLaby().getActivation().getEtat()) k=7;
+                        else k=6;
+                        gc.drawImage(lImages.get(1),i*taille,j*taille,taille,taille);
+                        gc.drawImage(lImages.get(k),i*taille,j*taille,taille,taille);
+                        break;
+                    case ACTIVATION:
+                        int l;
+                        if (this.lab.getLaby().getActivation().getEtat()) l=5;
+                        else l=4;
+                        gc.drawImage(lImages.get(1),i*taille,j*taille,taille,taille);
+                        gc.drawImage(lImages.get(l),i*taille,j*taille,taille,taille);
                         break;
                     case MUR:
                         gc.drawImage(lImages.get(0),i*taille,j*taille,taille,taille);

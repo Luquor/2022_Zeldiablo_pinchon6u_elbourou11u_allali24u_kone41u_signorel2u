@@ -47,6 +47,8 @@ public class Labyrinthe {
      */
     public List<CasePieges> CasePieges = new ArrayList<CasePieges>();
 
+    private Activation activation;
+
     /**
      * retourne la case suivante selon une actions
      *
@@ -101,6 +103,7 @@ public class Labyrinthe {
         // creation labyrinthe vide
         this.murs = new boolean[nbColonnes][nbLignes];
         this.pj = null;
+        PassageSecret passage = null;
 
         // lecture des cases
         String ligne = bfRead.readLine();
@@ -129,6 +132,18 @@ public class Labyrinthe {
                         // ajoute PJ
                         this.pj = new Perso(colonne, numeroLigne);
                         break;
+                    case ACTIVATION:
+                        // pas de mur
+                        this.murs[colonne][numeroLigne] = false;
+                        // ajoute PJ
+                        this.activation = new Activation(colonne, numeroLigne);
+                        break;
+                    case PASSAGE_SECRET:
+                        // pas de mur
+                        this.murs[colonne][numeroLigne] = true;
+                        // ajoute PJ
+                        passage = new PassageSecret(colonne, numeroLigne);
+                        break;
 
                     default:
                         throw new Error("caractere inconnu " + c);
@@ -139,6 +154,8 @@ public class Labyrinthe {
             ligne = bfRead.readLine();
             numeroLigne++;
         }
+        if(this.activation != null && passage!=null)
+            this.activation.setPassageSecret(passage);
 
         // ferme fichier
         bfRead.close();
@@ -207,5 +224,9 @@ public class Labyrinthe {
     public boolean getMur(int x, int y) {
         // utilise le tableau de boolean
         return this.murs[x][y];
+    }
+
+    public Activation getActivation() {
+        return activation;
     }
 }

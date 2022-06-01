@@ -29,5 +29,12 @@ public class Activation extends Position{
     public boolean getEtat() {
         return this.estActive;
     }
+
+    public int getPassageX(){
+        return this.passageSecret.getX();
+    }
+    public int getPassageY(){
+        return this.passageSecret.getY();
+    }
 }
 
