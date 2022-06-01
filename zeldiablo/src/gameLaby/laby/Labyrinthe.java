@@ -20,6 +20,10 @@ public class Labyrinthe {
     public static final char PJ = 'P';
     public static final char VIDE = '.';
 
+    public static final char PASSAGE_SECRET = 'S';
+
+    public static final char ACTIVATION = 'A';
+
     /**
      * constantes actions possibles
      */
