@@ -21,8 +21,12 @@ public class LabyDessin implements DessinJeu {
     private LabyJeu lab;
     public static int taille=30;
 
+<<<<<<< HEAD
     //Création d'une liste d'image
     private ArrayList<Image> lImages; // murs,floor,hero,trap
+=======
+    private ArrayList<Image> lImages; // murs,floor,trap
+>>>>>>> 4187d9b (finalisation des Sprites)
     private int lancement;
 
     public LabyDessin() {
@@ -43,13 +47,14 @@ public class LabyDessin implements DessinJeu {
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
         //effacer l ancien
-        gc.clearRect(0,0,lab.getLaby().getLength()*taille,lab.getLaby().getLengthY()*taille);
+        gc.clearRect(0,0,lab.getLaby().getLength()*taille,lab.getTailleHeight()*taille);
 
         if (lancement<1){
             lImages.add(new Image("/gameLaby/ressources/images/wall.png"));
             lImages.add(new Image("/gameLaby/ressources/images/floor.png"));
-            lImages.add(new Image("/gameLaby/ressources/images/Hero.png"));
             lImages.add(new Image("/gameLaby/ressources/images/trap.png"));
+            lImages.add(new Image("/gameLaby/ressources/images/hearth.png"));
+            this.lab.getPerso().creerComposantGraphiques();
             lancement++;
         }
 
@@ -64,11 +69,11 @@ public class LabyDessin implements DessinJeu {
                             b = b || this.lab.getLaby().CasePieges.get(k).estDecouverte() ;
                         }
                         if (b) {
-                            img =lImages.get(3);
+                            img =lImages.get(2);
                         } else
                             img=lImages.get(1);
                         gc.drawImage(img,i*taille,j*taille,taille,taille);
-                        gc.drawImage(lImages.get(2),i*taille,j*taille,taille,taille);
+                        gc.drawImage(this.lab.getLaby().pj.getAffichage(),i*taille,j*taille,taille,taille);
                         break;
                     case VIDE:
                         gc.drawImage(lImages.get(1),i*taille,j*taille,taille,taille);
@@ -79,5 +84,14 @@ public class LabyDessin implements DessinJeu {
                 }
             }
         }
+        afficherVie(gc,this.lab.getPerso());
     }
+
+    private void afficherVie(GraphicsContext gc, Perso perso) {
+        for (int i = 0; i < perso.getPv(); i++) {
+            gc.drawImage(lImages.get(3),i*taille+i*5,this.lab.getLaby().getLengthY()*taille,taille,taille);
+        }
+    }
+
+
 }
