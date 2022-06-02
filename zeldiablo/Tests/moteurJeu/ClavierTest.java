@@ -16,10 +16,10 @@ class ClavierTest {
         Clavier clavier = new Clavier("zeldiablo/config/configTouches.txt");
 
         //assertions
-        assertEquals(KeyCode.H, clavier.getToucheHaut(), "La touche h doit etre la touche du haut");
-        assertEquals(KeyCode.B, clavier.getToucheBas(), "La touche b doit etre la touche du bas");
-        assertEquals(KeyCode.G, clavier.getToucheGauche(), "La touche g doit etre la touche de gauche");
-        assertEquals(KeyCode.D, clavier.getToucheDroite(), "La touche d doit etre la touche de droite");
+        assertEquals(KeyCode.UP, clavier.getToucheHaut(), "La touche fleche haut doit etre la touche du haut");
+        assertEquals(KeyCode.DOWN, clavier.getToucheBas(), "La touche fleche bas doit etre la touche du bas");
+        assertEquals(KeyCode.LEFT, clavier.getToucheGauche(), "La touche fleche gauche doit etre la touche de gauche");
+        assertEquals(KeyCode.RIGHT, clavier.getToucheDroite(), "La touche fleche droite doit etre la touche de droite");
     }
     /**
      * Test de la methode configurerTouches quand le fichier de configuration
