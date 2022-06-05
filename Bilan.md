@@ -19,10 +19,13 @@ ANAS : Mes points forts sur cette SAE ont été les diagrammes de classe pour pl
 <br> Mais j'ai aussi réalisé pas mal de diagramme de classe.
 <br> Mon avis sur cette sae est qu'elle a été très intéressante, mais qu'on manquait assez de temps, car
 nous commencions à entrer dans une manière de concevoir très intéressante.
-<br>THEO : Je pense être plus abile dans la programmation en ligne de code que dans la conception et la réflexion préalable. C'est pourquoi cette SAE m'a démontré l'importance de celle-ci sans laquelle la création de code en équipe serait beaucoup plus complexe, voir impossible dans de plus longs projets.
+
+<br><br>THEO : Je pense être plus abile dans la programmation en ligne de code que dans la conception et la réflexion préalable. C'est pourquoi cette SAE m'a démontré l'importance de celle-ci sans laquelle la création de code en équipe serait beaucoup plus complexe, voir impossible dans de plus longs projets.
 <br>Pour moi, la poursuite de cette approche devrait être envisageable afin de bien structuré chacune des étapes de la conception.
 Et par la même occasion, approfondir le travail réalisé lors de la SAE.
 
+<br><br>LUCAS : Contrairement à Théo, j'ai plus de problèmes dans la programmation que dans le fait de réfléchir à la conception ou trouver des solutions. Cette SAE m'a donc permis d'être plus utile dans le groupe que d'habitude.
+<br> Cependant, le projet aurait pu être mieux conçu, et les réunions dans votre bureau entre chaque itération m'ont fait comprendre comment améliorer la conception, pour rendre le jeu maintenable sur du long terme.
 
 ## Conclusions
 Pour conclure, nous pouvons dire que ce projet nous a vraiment fait comprendre toute la démarche derrière le fait de créer un projet.
