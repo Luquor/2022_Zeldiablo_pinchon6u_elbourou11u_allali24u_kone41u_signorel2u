@@ -29,6 +29,10 @@ Et par la même occasion, approfondir le travail réalisé lors de la SAE.
 
 <br><br>MEHDI : Tout au long de cette SAE, je pense avoir été à l'aise dans l'utilisation de l'outil PlantUML. Ce qui nous a permis d'être plus clairs et plus efficaces dans notre conception et dans la réalisation des diagrammes. Je suis également plutôt satisfait de la fonctionnalité de configuration des touches sur laquelle je me suis investi. J'ai également le sentiment que cette SAE m'a fait comprendre l'importance d'avoir une démarche de conception rigoureuse pour mener à bien un projet, qui plus est dans le cadre d'un travail d'équipe. Cependant, je regrette le manque de temps auquel nous avons fait face à la fin de la SAE d'autant plus qu'il est survenu au moment où nous commencions à constater les difficultés de la conception d'application et tout ce qui en découle. Cela se matérialise notamment par l'échec que nous avons eu avec la fonctionnalté d'ajout d'un menu.
 
+<br><br>ISMAEL : Mes points forts dans cette SAE ont été de proposer des conceptions pour les fonctionnalités choisi. A savoir, principalement la configuration des touches, et l'ajout du
+menu de début de jeu. Toutes fois, la difficultés principale pour moi a été les diagrammes de séquences. En effet, réfléchir au fonctionnement d'une méthode avant de se lancer l'écriture de son code, n'est pas une tâche facile. Jusqu'à présent, nous avions l'habitude de suivre des sujets de TD assez guidés. De ce fait, nous ne réfléchissions pas à la conception entière de l'application. Dans cette SAE, nous avons été amené à réfléchir sur une conception d'application, et de prendre en compte les futures améliorations de celle-ci.
+Cette SAE, a été très intéressante malgré le manque de temps. Ce travail de conception a éclairci ma vision du métier de développeur.
+
 ## Conclusions
-Pour conclure, nous pouvons dire que ce projet nous a vraiment fait comprendre toute la démarche derrière le fait de créer un projet.
+Pour conclure, nous pouvons dire que ce projet nous a prendre conscience de la rigueur à appliquer dans la démarche de conception d'une application informatique.
 <br>Nous avons bien mieux compris comment la réflexion derrière la conception est très utile pour la maintenance de projet.
