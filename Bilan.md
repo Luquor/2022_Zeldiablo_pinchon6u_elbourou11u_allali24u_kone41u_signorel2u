@@ -27,6 +27,12 @@ Et par la même occasion, approfondir le travail réalisé lors de la SAE.
 <br><br>LUCAS : Contrairement à Théo, j'ai plus de problèmes dans la programmation que dans le fait de réfléchir à la conception ou trouver des solutions. Cette SAE m'a donc permis d'être plus utile dans le groupe que d'habitude.
 <br> Cependant, le projet aurait pu être mieux conçu, et les réunions dans votre bureau entre chaque itération m'ont fait comprendre comment améliorer la conception, pour rendre le jeu maintenable sur du long terme.
 
+<br><br>MEHDI : Tout au long de cette SAE, je pense avoir été à l'aise dans l'utilisation de l'outil PlantUML. Ce qui nous a permis d'être plus clairs
+<br>et plus efficaces dans notre conception et dans la réalisation des diagrammes. Je suis également plutôt satisfait de la fonctionnalité de configuration des touches sur laquelle je me suis investi. J'ai également le sentiment que cette SAE m'a fait comprendre l'importance d'avoir une démarche de conception
+<br>rigoureuse pour mener un projet à bien qui plus est dans le cadre d'un travail d'équipe. Cependant, je regrette le manque de temps auquel nous avons fait face
+<br>à la fin de la SAE d'autant plus qu'il est survenu au moment où nous commencions à constater les difficultés de la conception d'application et tout ce qui
+<br>en découle. Cela se matérialise notamment par l'échec que nous avons eu avec la fonctionnalté d'ajout d'un menu.
+
 ## Conclusions
 Pour conclure, nous pouvons dire que ce projet nous a vraiment fait comprendre toute la démarche derrière le fait de créer un projet.
 <br>Nous avons bien mieux compris comment la réflexion derrière la conception est très utile pour la maintenance de projet.
